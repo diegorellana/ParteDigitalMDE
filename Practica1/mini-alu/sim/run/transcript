@@ -1,0 +1,161 @@
+# //  Questa Sim-64
+# //  Version 2025.3 linux_x86_64 Sep 15 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+do ../bin/simular.do
+# tb_top_mini_alu
+# work
+# TBD
+# -2008
+# rtl/ctes_pkg.vhd rtl/types_pkg.vhd rtl/functional_unit.vhd rtl/fu_arch_adder.vhd rtl/top_mini_alu.vhd testbench/tb_top_mini_alu.vhd
+# 0
+# QuestaSim-64 vmap 2025.3 Lib Mapping Utility 2025.09 Sep 15 2025
+# vmap TBD TBD 
+# ** Note: (vmap-220) '/apps/siemens/QUESTAONESIM_2025.3/questasim/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Copying /apps/siemens/QUESTAONESIM_2025.3/questasim/linux_x86_64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# QuestaSim-64 vmap 2025.3 Lib Mapping Utility 2025.09 Sep 15 2025
+# vmap work work 
+# ** Note: (vmap-220) 'modelsim.ini' is used as the ini file.
+# Modifying modelsim.ini
+# vcom [work] rtl/ctes_pkg.vhd
+# QuestaSim-64 vcom 2025.3 Compiler 2025.09 Sep 15 2025
+# Start time: 12:02:06 on Oct 22,2026
+# vcom -reportprogress 300 -2008 -work work ../../rtl/ctes_pkg.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package ctes_pkg
+# End time: 12:02:07 on Oct 22,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom [work] rtl/types_pkg.vhd
+# QuestaSim-64 vcom 2025.3 Compiler 2025.09 Sep 15 2025
+# Start time: 12:02:07 on Oct 22,2026
+# vcom -reportprogress 300 -2008 -work work ../../rtl/types_pkg.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package ctes_pkg
+# -- Compiling package types_pkg
+# End time: 12:02:08 on Oct 22,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom [work] rtl/functional_unit.vhd
+# QuestaSim-64 vcom 2025.3 Compiler 2025.09 Sep 15 2025
+# Start time: 12:02:08 on Oct 22,2026
+# vcom -reportprogress 300 -2008 -work work ../../rtl/functional_unit.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package ctes_pkg
+# -- Loading package types_pkg
+# -- Compiling entity functional_unit
+# End time: 12:02:08 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom [work] rtl/fu_arch_adder.vhd
+# QuestaSim-64 vcom 2025.3 Compiler 2025.09 Sep 15 2025
+# Start time: 12:02:08 on Oct 22,2026
+# vcom -reportprogress 300 -2008 -work work ../../rtl/fu_arch_adder.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package ctes_pkg
+# -- Loading package types_pkg
+# -- Compiling architecture fu_adder of functional_unit
+# -- Loading entity functional_unit
+# End time: 12:02:08 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom [work] rtl/top_mini_alu.vhd
+# QuestaSim-64 vcom 2025.3 Compiler 2025.09 Sep 15 2025
+# Start time: 12:02:08 on Oct 22,2026
+# vcom -reportprogress 300 -2008 -work work ../../rtl/top_mini_alu.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package ctes_pkg
+# -- Loading package types_pkg
+# -- Compiling entity top_mini_alu
+# -- Compiling architecture top_alu_arch of top_mini_alu
+# -- Loading entity functional_unit
+# End time: 12:02:08 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom [work] testbench/tb_top_mini_alu.vhd
+# QuestaSim-64 vcom 2025.3 Compiler 2025.09 Sep 15 2025
+# Start time: 12:02:09 on Oct 22,2026
+# vcom -reportprogress 300 -2008 -work work ../../testbench/tb_top_mini_alu.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Loading package ctes_pkg
+# -- Compiling entity tb_top_mini_alu
+# -- Compiling architecture banco of tb_top_mini_alu
+# -- Loading package types_pkg
+# -- Loading entity top_mini_alu
+# End time: 12:02:09 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -voptargs="+acc" work.tb_top_mini_alu 
+# Start time: 12:02:09 on Oct 22,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading std.env(body)
+# Loading work.ctes_pkg
+# Loading work.types_pkg
+# Loading work.tb_top_mini_alu(banco)#1
+# Loading work.top_mini_alu(top_alu_arch)#1
+# Loading work.functional_unit(fu_adder)#1
+vsim -voptargs=+acc $C_LIBRERIA_TRABAJO.$C_TOP
+# End time: 12:15:03 on Oct 22,2026, Elapsed time: 0:12:54
+# Errors: 0, Warnings: 1
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -voptargs="+acc" work.tb_top_mini_alu 
+# Start time: 12:15:03 on Oct 22,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading std.env(body)
+# Loading work.ctes_pkg
+# Loading work.types_pkg
+# Loading work.tb_top_mini_alu(banco)#1
+# Loading work.top_mini_alu(top_alu_arch)#1
+# Loading work.functional_unit(fu_adder)#1
+add wave  \
+sim:/tb_top_mini_alu/dut/operand_a \
+sim:/tb_top_mini_alu/dut/operand_b \
+sim:/tb_top_mini_alu/dut/operation_code \
+sim:/tb_top_mini_alu/dut/operation_args \
+sim:/tb_top_mini_alu/dut/result \
+sim:/tb_top_mini_alu/dut/error_flag \
+sim:/tb_top_mini_alu/dut/error_code
+# Causality operation skipped due to absence of debug database file
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /alumnos/a167838/ParteDigital/Practica1/mini-alu/sim/run/wave.do
+run -all
+# ** Note: Casos comprobados: 14
+#    Time: 28 ms  Iteration: 0  Instance: /tb_top_mini_alu
+# Break in Process p_estimulos at ../../testbench/tb_top_mini_alu.vhd line 167

@@ -1,0 +1,143 @@
+# =============================================================================
+# estimulos.txt - casos de prueba de la mini-ALU.
+#
+# Cada caso ocupa SIETE líneas, una por valor y siempre en este orden:
+#
+#     1  operand_a             número decimal, con signo si hace falta
+#     2  operand_b             número decimal, con signo si hace falta
+#     3  operation_code        3 bits en binario
+#     4  operation_args        2 bits en binario
+#     5  result esperado       número decimal, con signo si hace falta
+#     6  error_flag esperado   0 o 1
+#     7  error_code esperado   3 bits en binario
+#
+# De los números decimales se toman los 8 bits de menos peso, así que da igual
+# escribir un caso con signo o sin él: -56 y 200 son la misma secuencia de bits.
+# Los códigos de operación, argumentos y error van en binario.
+# =============================================================================
+
+# Caso 1: sin signo, 3 + 5 = 8
+3
+5
+000
+00
+8
+0
+000
+
+# Caso 2: sin signo, 15 + 16 = 31
+15
+16
+000
+00
+31
+0
+000
+
+# Caso 3: sin signo, 0 + 0 = 0
+0
+0
+000
+00
+0
+0
+000
+
+# Caso 4: sin signo, 200 + 100 = 300, que no cabe en 8 bits: queda 44 y avisa
+200
+100
+000
+00
+44
+1
+011
+
+# Caso 5: sin signo, 255 + 1 = 256, que no cabe: queda 0 y avisa
+255
+1
+000
+00
+0
+1
+011
+
+# Caso 6: con signo, 5 + 3 = 8
+5
+3
+000
+01
+8
+0
+000
+
+# Caso 7: con signo, -5 + 3 = -2 (signos distintos: nunca desborda)
+-5
+3
+000
+01
+-2
+0
+000
+
+# Caso 8: con signo, -1 + -1 = -2
+-1
+-1
+000
+01
+-2
+0
+000
+
+# Caso 9: con signo, 100 + 100 = 200, que no cabe: sale -56 y avisa (overflow)
+100
+100
+000
+01
+-56
+1
+011
+
+# Caso 10: con signo, -100 + -100 = -200, que no cabe: sale 56 y avisa (underflow)
+-100
+-100
+000
+01
+56
+1
+100
+
+# Caso 11: el sumador solo admite UNSIGNED y SIGNED; 10 no vale
+3
+5
+000
+10
+0
+1
+010
+
+# Caso 12: lo mismo con 11
+3
+5
+000
+11
+0
+1
+010
+
+# Caso 13: la resta todavía no existe
+10
+3
+001
+00
+0
+1
+001
+
+# Caso 14: código de operación sin asignar
+10
+3
+111
+00
+0
+1
+001

@@ -1,0 +1,217 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11e vcom 2025.3 2025.09, Sep 15 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/alumnos/a167838/ParteDigital/Practica1/mini-alu/sim/run
+T_opt
+!i145 1
+!i144 0
+!s110 1792663332
+VD_B>Bn][KU^`DU07e_?hk3
+04 15 5 work tb_top_mini_alu banco 1
+=1-1866da22bdde-6ad9df21-e86ec-1e4a
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM100
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work +acc
+tCvgOpt 0
+n@_opt
+OL;O;2025.3;82
+Pctes_pkg
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+w0
+R1
+8../../rtl/ctes_pkg.vhd
+F../../rtl/ctes_pkg.vhd
+l0
+L4 45
+VZflN1>3H61gJIlOb274Nz3
+!s100 80TFQY4F4cDBHm29gH4>O2
+Z4 OL;C;2025.3;82
+33
+Z5 !s110 1792663327
+!i10b 1
+!s108 1792663326.000000
+!s90 -reportprogress|300|-2008|-work|work|../../rtl/ctes_pkg.vhd|
+!s107 ../../rtl/ctes_pkg.vhd|
+!i113 0
+Z6 o-2008 -work work
+Z7 tExplicit 1 CvgOpt 0
+Efunctional_unit
+w0
+Z8 DPx4 work 8 ctes_pkg 0 22 ZflN1>3H61gJIlOb274Nz3
+Z9 DPx4 work 9 types_pkg 0 22 @mK9A:_zDDFV@mOZ2@VK`1
+R2
+R3
+!i122 2
+R1
+8../../rtl/functional_unit.vhd
+F../../rtl/functional_unit.vhd
+l0
+L6 1
+VPbD[62G7h@lH:bea;IEU;2
+!s100 8<?gAe<IF^o^UFhC@^@5z2
+R4
+33
+Z10 !s110 1792663328
+!i10b 1
+Z11 !s108 1792663328.000000
+!s90 -reportprogress|300|-2008|-work|work|../../rtl/functional_unit.vhd|
+!s107 ../../rtl/functional_unit.vhd|
+!i113 0
+R6
+R7
+Afu_adder
+Z12 DEx4 work 15 functional_unit 0 22 PbD[62G7h@lH:bea;IEU;2
+R9
+R8
+Z13 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R2
+R3
+!i122 3
+8../../rtl/fu_arch_adder.vhd
+F../../rtl/fu_arch_adder.vhd
+l17
+L8 95
+VkGX]^H]]PCkKkhZ^iIK[m2
+!s100 kF_b]cV;M5IgJh;fm4kD[0
+R4
+33
+R10
+!i10b 1
+R11
+!s90 -reportprogress|300|-2008|-work|work|../../rtl/fu_arch_adder.vhd|
+!s107 ../../rtl/fu_arch_adder.vhd|
+!i113 0
+R6
+R7
+Etb_top_mini_alu
+w0
+R8
+Z14 DPx3 std 3 env 0 22 g[fj8WJKOa<0Y`zWY3UD70
+R13
+R2
+R3
+!i122 4
+R1
+Z15 8../../testbench/tb_top_mini_alu.vhd
+Z16 F../../testbench/tb_top_mini_alu.vhd
+l0
+L23 1
+V=d9OXodziKBMQS<C2G@Yj1
+!s100 4QWEg`^?6I?7j=iYh46J00
+R4
+33
+Z17 !s110 1792663329
+!i10b 1
+Z18 !s108 1792663329.000000
+Z19 !s90 -reportprogress|300|-2008|-work|work|../../testbench/tb_top_mini_alu.vhd|
+Z20 !s107 ../../testbench/tb_top_mini_alu.vhd|
+!i113 0
+R6
+R7
+Abanco
+R9
+Z21 DEx4 work 12 top_mini_alu 0 22 c1XOKgzE[RZF4Y<^a7:Kz1
+R8
+R14
+R13
+R2
+R3
+DEx4 work 15 tb_top_mini_alu 0 22 =d9OXodziKBMQS<C2G@Yj1
+!i122 4
+l48
+L26 154
+VeYndn_@@84;2RmS=;9b<`0
+!s100 n?=7;TN2^bdiFnn<]_bS@2
+R4
+33
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 0
+R6
+R7
+Etop_mini_alu
+w0
+R9
+R8
+R2
+R3
+!i122 3
+R1
+Z22 8../../rtl/top_mini_alu.vhd
+Z23 F../../rtl/top_mini_alu.vhd
+l0
+L8 1
+Vc1XOKgzE[RZF4Y<^a7:Kz1
+!s100 KTDVnAUIRm0in5f7joike0
+R4
+33
+R10
+!i10b 1
+R11
+Z24 !s90 -reportprogress|300|-2008|-work|work|../../rtl/top_mini_alu.vhd|
+Z25 !s107 ../../rtl/top_mini_alu.vhd|
+!i113 0
+R6
+R7
+Atop_alu_arch
+R12
+R9
+R8
+R2
+R3
+R21
+!i122 3
+l28
+L20 45
+VYM_USGjE;bmfo^ll?T[J71
+!s100 oml1RBWg__fPJdj^V78J22
+R4
+33
+R10
+!i10b 1
+R11
+R24
+R25
+!i113 0
+R6
+R7
+Ptypes_pkg
+R8
+R2
+R3
+!i122 1
+w0
+R1
+8../../rtl/types_pkg.vhd
+F../../rtl/types_pkg.vhd
+l0
+L6 14
+V@mK9A:_zDDFV@mOZ2@VK`1
+!s100 U68[YkaJMJT3JS3gAbfM51
+R4
+33
+R5
+!i10b 1
+!s108 1792663327.000000
+!s90 -reportprogress|300|-2008|-work|work|../../rtl/types_pkg.vhd|
+!s107 ../../rtl/types_pkg.vhd|
+!i113 0
+R6
+R7
