@@ -124,16 +124,16 @@
 1
 010
 
-# Caso 13: la resta todavía no existe
+# Caso 13: código de operación sin asignar (110)
 10
 3
-001
+110
 00
 0
 1
 001
 
-# Caso 14: código de operación sin asignar
+# Caso 14: otro código de operación sin asignar (111)
 10
 3
 111
@@ -141,3 +141,247 @@
 0
 1
 001
+
+# Caso 15: RESTA: sin signo, 10 - 3 = 7
+10
+3
+001
+00
+7
+0
+000
+
+# Caso 16: RESTA: sin signo, 3 - 5 no cabe: queda 254 y avisa (underflow)
+3
+5
+001
+00
+254
+1
+100
+
+# Caso 17: RESTA: con signo, 5 - 3 = 2
+5
+3
+001
+01
+2
+0
+000
+
+# Caso 18: RESTA: con signo, -5 - 3 = -8
+-5
+3
+001
+01
+-8
+0
+000
+
+# Caso 19: RESTA: con signo, 100 - -100 = 200, no cabe: sale -56 y avisa (overflow)
+100
+-100
+001
+01
+-56
+1
+011
+
+# Caso 20: RESTA: con signo, -100 - 100 = -200, no cabe: sale 56 y avisa (underflow)
+-100
+100
+001
+01
+56
+1
+100
+
+# Caso 21: RESTA: argumento 10 no válido
+3
+5
+001
+10
+0
+1
+010
+
+# Caso 22: COMPARACIÓN: sin signo, mayor de 200 y 100
+200
+100
+010
+00
+200
+0
+000
+
+# Caso 23: COMPARACIÓN: con signo, mayor de 200 (-56) y 100
+200
+100
+010
+01
+100
+0
+000
+
+# Caso 24: COMPARACIÓN: sin signo, menor de 200 y 100
+200
+100
+010
+10
+100
+0
+000
+
+# Caso 25: COMPARACIÓN: con signo, menor de 200 (-56) y 100
+200
+100
+010
+11
+-56
+0
+000
+
+# Caso 26: DESPLAZAMIENTO: sin signo, 16 >> 2 = 4
+16
+2
+011
+00
+4
+0
+000
+
+# Caso 27: DESPLAZAMIENTO: con signo, -16 >> 2 = -4 (rellena con el signo)
+-16
+2
+011
+01
+-4
+0
+000
+
+# Caso 28: DESPLAZAMIENTO: sin signo, 240 >> 2 = 60 (rellena con ceros)
+240
+2
+011
+00
+60
+0
+000
+
+# Caso 29: DESPLAZAMIENTO: sin signo, 16 << 2 = 64
+16
+2
+011
+10
+64
+0
+000
+
+# Caso 30: DESPLAZAMIENTO: con signo, -16 << 2 = -64
+-16
+2
+011
+11
+-64
+0
+000
+
+# Caso 31: DESPLAZAMIENTO: sin signo, 200 >> 9 = 0
+200
+9
+011
+00
+0
+0
+000
+
+# Caso 32: DESPLAZAMIENTO: con signo positivo, 100 >> 9 = 0
+100
+9
+011
+01
+0
+0
+000
+
+# Caso 33: DESPLAZAMIENTO: con signo negativo, -100 >> 9 = -1
+-100
+9
+011
+01
+-1
+0
+000
+
+# Caso 34: DESPLAZAMIENTO: sin signo, 200 << 9 = 0
+200
+9
+011
+10
+0
+0
+000
+
+# Caso 35: LÓGICA: 12 AND 10 = 8
+12
+10
+100
+00
+8
+0
+000
+
+# Caso 36: LÓGICA: 12 OR 10 = 14
+12
+10
+100
+01
+14
+0
+000
+
+# Caso 37: LÓGICA: 12 XOR 10 = 6
+12
+10
+100
+10
+6
+0
+000
+
+# Caso 38: LÓGICA: argumento 11 no válido
+12
+10
+100
+11
+0
+1
+010
+
+# Caso 39: NIBBLES: alto de A (0xAB) con bajo de B (0xCD) = 0xAD = 173
+171
+205
+101
+00
+173
+0
+000
+
+# Caso 40: NIBBLES: alto de B (0xCD) con bajo de A (0xAB) = 0xCB = 203
+171
+205
+101
+01
+203
+0
+000
+
+# Caso 41: NIBBLES: argumento 10 no válido
+171
+205
+101
+10
+0
+1
+010
+

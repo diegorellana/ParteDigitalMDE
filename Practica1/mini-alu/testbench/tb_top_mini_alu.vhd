@@ -157,7 +157,7 @@ begin
         -- suficientemente alta como para parar la simulación
         -- -------------------------------------------------------------------------
 
-        -- assert false report "Simulación completa" severity failure;
+        --assert false report "Simulación completa" severity failure;
 
         -- -------------------------------------------------------------------------
         -- Pausar la simulación sin cerrar el simulador: útil para analizar cómo ha 

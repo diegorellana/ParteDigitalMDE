@@ -1,5 +1,9 @@
-1 8 ctes_pkg 4 fast 61 /alumnos/a167838/ParteDigital/Practica1/mini-alu/sim/run/work 0 80 0 0 190 0
-1 9 types_pkg 4 fast 61 /alumnos/a167838/ParteDigital/Practica1/mini-alu/sim/run/work 0 80 0 0 31 0
-1 15 functional_unit 8 fu_adder 61 /alumnos/a167838/ParteDigital/Practica1/mini-alu/sim/run/work 1 65 0 0 156 0
-1 12 top_mini_alu 12 top_alu_arch 61 /alumnos/a167838/ParteDigital/Practica1/mini-alu/sim/run/work 1 65 0 0 95 0
-1 15 tb_top_mini_alu 5 banco 61 /alumnos/a167838/ParteDigital/Practica1/mini-alu/sim/run/work 1 65 0 0 338 0
+1 8 ctes_pkg 4 fast 77 /alumnos/a167838/ParteDigital/ParteDigitalMDE/Practica1/mini-alu/sim/run/work 0 80 0 0 190 0
+1 9 types_pkg 4 fast 77 /alumnos/a167838/ParteDigital/ParteDigitalMDE/Practica1/mini-alu/sim/run/work 0 80 0 0 31 0
+1 15 functional_unit 14 fu_nibble_swap 77 /alumnos/a167838/ParteDigital/ParteDigitalMDE/Practica1/mini-alu/sim/run/work 1 65 0 0 108 0
+1 15 functional_unit 8 fu_logic 77 /alumnos/a167838/ParteDigital/ParteDigitalMDE/Practica1/mini-alu/sim/run/work 1 65 0 0 99 0
+1 15 functional_unit 10 fu_shifter 77 /alumnos/a167838/ParteDigital/ParteDigitalMDE/Practica1/mini-alu/sim/run/work 1 65 0 0 131 0
+1 15 functional_unit 13 fu_comparator 77 /alumnos/a167838/ParteDigital/ParteDigitalMDE/Practica1/mini-alu/sim/run/work 1 65 0 0 116 0
+1 15 functional_unit 8 fu_adder 77 /alumnos/a167838/ParteDigital/ParteDigitalMDE/Practica1/mini-alu/sim/run/work 1 65 0 0 156 0
+1 12 top_mini_alu 12 top_alu_arch 77 /alumnos/a167838/ParteDigital/ParteDigitalMDE/Practica1/mini-alu/sim/run/work 1 65 0 0 243 0
+1 15 tb_top_mini_alu 5 banco 77 /alumnos/a167838/ParteDigital/ParteDigitalMDE/Practica1/mini-alu/sim/run/work 1 65 0 0 338 0
