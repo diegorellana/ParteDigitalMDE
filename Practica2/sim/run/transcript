@@ -1,0 +1,212 @@
+# //  Questa Sim-64
+# //  Version 2025.3 linux_x86_64 Sep 15 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+do ../bin
+# Cannot open macro file: ../bin
+do ../bin/simular.do
+# tb_spi_master
+# work
+# TBD
+# -2008
+# rtl/ctes_pkg.vhd rtl/spi_master.vhd testbench/tb_spi_master.vhd
+# 0
+# QuestaSim-64 vmap 2025.3 Lib Mapping Utility 2025.09 Sep 15 2025
+# vmap TBD TBD 
+# ** Note: (vmap-220) '/apps/siemens/QUESTAONESIM_2025.3/questasim/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Copying /apps/siemens/QUESTAONESIM_2025.3/questasim/linux_x86_64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# QuestaSim-64 vmap 2025.3 Lib Mapping Utility 2025.09 Sep 15 2025
+# vmap work work 
+# ** Note: (vmap-220) 'modelsim.ini' is used as the ini file.
+# Modifying modelsim.ini
+# vcom [work] rtl/ctes_pkg.vhd
+# QuestaSim-64 vcom 2025.3 Compiler 2025.09 Sep 15 2025
+# Start time: 13:00:52 on Nov 05,2026
+# vcom -reportprogress 300 -2008 -work work ../../rtl/ctes_pkg.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Compiling package ctes_pkg
+# End time: 13:00:53 on Nov 05,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom [work] rtl/spi_master.vhd
+# QuestaSim-64 vcom 2025.3 Compiler 2025.09 Sep 15 2025
+# Start time: 13:00:53 on Nov 05,2026
+# vcom -reportprogress 300 -2008 -work work ../../rtl/spi_master.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Loading package ctes_pkg
+# -- Compiling entity spi_master
+# -- Compiling architecture rtl of spi_master
+# End time: 13:00:53 on Nov 05,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom [work] testbench/tb_spi_master.vhd
+# QuestaSim-64 vcom 2025.3 Compiler 2025.09 Sep 15 2025
+# Start time: 13:00:53 on Nov 05,2026
+# vcom -reportprogress 300 -2008 -work work ../../testbench/tb_spi_master.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Loading package ctes_pkg
+# -- Compiling entity tb_spi_master
+# -- Compiling architecture behavioral of tb_spi_master
+# -- Loading package MATH_REAL
+# -- Loading entity spi_master
+# End time: 13:00:54 on Nov 05,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -voptargs="+acc" work.tb_spi_master 
+# Start time: 13:00:54 on Nov 05,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+# ** Note: (vopt-143) Recognized 1 FSM in architecture body "spi_master(rtl)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading std.env(body)
+# Loading work.ctes_pkg
+# Loading ieee.math_real(body)
+# Loading work.tb_spi_master(behavioral)#1
+# Loading work.spi_master(rtl)#1
+# sim:/tb_spi_master/dut
+run -all
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /tb_spi_master/dut
+# ** Note: Comienza una transacción SPI, con M-S = 0x1234 y S-M = 0x5678
+#    Time: 210 ns  Iteration: 1  Instance: /tb_spi_master
+# ** Warning: mosi no reproduce tx_word: se esperaba 1234 y se observó 0000
+#    Time: 2040 ns  Iteration: 3  Instance: /tb_spi_master
+# ** Warning: rx_word no recoge lo que emitió el esclavo: se esperaba 5678 y se leyó 0000
+#    Time: 2040 ns  Iteration: 3  Instance: /tb_spi_master
+# ** Note: Comienza una transacción SPI, con M-S = 0x0000 y S-M = 0xFFFF
+#    Time: 2060 ns  Iteration: 1  Instance: /tb_spi_master
+# ** Warning: rx_word no recoge lo que emitió el esclavo: se esperaba FFFF y se leyó 0000
+#    Time: 3890 ns  Iteration: 3  Instance: /tb_spi_master
+# ** Note: Comienza una transacción SPI, con M-S = 0xAAAA y S-M = 0x5555
+#    Time: 3910 ns  Iteration: 1  Instance: /tb_spi_master
+# ** Warning: mosi no reproduce tx_word: se esperaba AAAA y se observó 0000
+#    Time: 5740 ns  Iteration: 3  Instance: /tb_spi_master
+# ** Warning: rx_word no recoge lo que emitió el esclavo: se esperaba 5555 y se leyó 0000
+#    Time: 5740 ns  Iteration: 3  Instance: /tb_spi_master
+# ** Note: Comienza una transacción SPI, con M-S = 0x8000 y S-M = 0x0001
+#    Time: 5760 ns  Iteration: 1  Instance: /tb_spi_master
+# ** Warning: mosi no reproduce tx_word: se esperaba 8000 y se observó 0000
+#    Time: 7590 ns  Iteration: 3  Instance: /tb_spi_master
+# ** Warning: rx_word no recoge lo que emitió el esclavo: se esperaba 0001 y se leyó 0000
+#    Time: 7590 ns  Iteration: 3  Instance: /tb_spi_master
+# ** Note: Simulación completa
+#    Time: 7600 ns  Iteration: 3  Instance: /tb_spi_master
+# Break in Process p_estimulos at ../../testbench/tb_spi_master.vhd line 195
+# Causality operation skipped due to absence of debug database file
+do ../bin/simular.do
+# tb_spi_master
+# work
+# TBD
+# -2008
+# rtl/ctes_pkg.vhd rtl/spi_master.vhd testbench/tb_spi_master.vhd
+# End time: 13:12:09 on Nov 05,2026, Elapsed time: 0:11:15
+# Errors: 0, Warnings: 9
+# 0
+# QuestaSim-64 vmap 2025.3 Lib Mapping Utility 2025.09 Sep 15 2025
+# vmap TBD TBD 
+# ** Note: (vmap-220) 'modelsim.ini' is used as the ini file.
+# Modifying modelsim.ini
+# QuestaSim-64 vmap 2025.3 Lib Mapping Utility 2025.09 Sep 15 2025
+# vmap work work 
+# ** Note: (vmap-220) 'modelsim.ini' is used as the ini file.
+# Modifying modelsim.ini
+# vcom [work] rtl/ctes_pkg.vhd
+# QuestaSim-64 vcom 2025.3 Compiler 2025.09 Sep 15 2025
+# Start time: 13:12:10 on Nov 05,2026
+# vcom -reportprogress 300 -2008 -work work ../../rtl/ctes_pkg.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Compiling package ctes_pkg
+# End time: 13:12:11 on Nov 05,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom [work] rtl/spi_master.vhd
+# QuestaSim-64 vcom 2025.3 Compiler 2025.09 Sep 15 2025
+# Start time: 13:12:11 on Nov 05,2026
+# vcom -reportprogress 300 -2008 -work work ../../rtl/spi_master.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Loading package ctes_pkg
+# -- Compiling entity spi_master
+# -- Compiling architecture rtl of spi_master
+# End time: 13:12:11 on Nov 05,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom [work] testbench/tb_spi_master.vhd
+# QuestaSim-64 vcom 2025.3 Compiler 2025.09 Sep 15 2025
+# Start time: 13:12:11 on Nov 05,2026
+# vcom -reportprogress 300 -2008 -work work ../../testbench/tb_spi_master.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Loading package ctes_pkg
+# -- Compiling entity tb_spi_master
+# -- Compiling architecture behavioral of tb_spi_master
+# -- Loading package MATH_REAL
+# -- Loading entity spi_master
+# End time: 13:12:11 on Nov 05,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -voptargs="+acc" work.tb_spi_master 
+# Start time: 13:12:11 on Nov 05,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+# ** Note: (vopt-143) Recognized 1 FSM in architecture body "spi_master(rtl)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading std.env(body)
+# Loading work.ctes_pkg
+# Loading ieee.math_real(body)
+# Loading work.tb_spi_master(behavioral)#1
+# Loading work.spi_master(rtl)#1
+# sim:/tb_spi_master/dut
+sim -all
+# bad option "-all": must be blank, cget, configure, copy, data, get, put, read, redither, transparency, or write
+run -all
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /tb_spi_master/dut
+# ** Note: Comienza una transacción SPI, con M-S = 0x1234 y S-M = 0x5678
+#    Time: 210 ns  Iteration: 1  Instance: /tb_spi_master
+# ** Note: Comienza una transacción SPI, con M-S = 0x0000 y S-M = 0xFFFF
+#    Time: 2060 ns  Iteration: 1  Instance: /tb_spi_master
+# ** Note: Comienza una transacción SPI, con M-S = 0xAAAA y S-M = 0x5555
+#    Time: 3910 ns  Iteration: 1  Instance: /tb_spi_master
+# ** Note: Comienza una transacción SPI, con M-S = 0x8000 y S-M = 0x0001
+#    Time: 5760 ns  Iteration: 1  Instance: /tb_spi_master
+# ** Note: Simulación completa
+#    Time: 7600 ns  Iteration: 3  Instance: /tb_spi_master
+# Break in Process p_estimulos at ../../testbench/tb_spi_master.vhd line 195

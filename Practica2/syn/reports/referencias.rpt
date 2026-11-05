@@ -1,0 +1,49 @@
+ 
+****************************************
+Report : reference
+Design : spi_master
+Version: W-2024.09-SP2
+Date   : Thu Nov  5 13:16:06 2026
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN3                class          2.000000       3      6.000000  
+AO1P               class          2.000000       1      2.000000  
+AO2                class          2.000000       2      4.000000  
+AO3                class          2.000000       3      6.000000  
+AO4                class          2.000000      42     84.000000  
+AO6                class          2.000000       1      2.000000  
+AO7                class          2.000000       3      6.000000  
+EN                 class          3.000000       3      9.000000  
+EO                 class          3.000000       1      3.000000  
+EOI                class          3.000000       3      9.000000  
+EON1               class          3.000000       5     15.000000  
+FD2                class          9.000000      64    576.000000  n
+FD4                class          8.000000       2     16.000000  n
+IVDA               class          1.000000       2      2.000000  
+IVI                class          1.000000       4      4.000000  
+ND2                class          1.000000       1      1.000000  
+ND2I               class          1.000000       9      9.000000  
+ND3                class          2.000000       1      2.000000  
+ND4                class          2.000000       2      4.000000  
+NR2                class          1.000000       1      1.000000  
+NR2I               class          1.000000      12     12.000000  
+NR4P               class          4.000000       1      4.000000  
+OR2                class          2.000000       1      2.000000  
+OR2P               class          2.000000       1      2.000000  
+OR3                class          2.000000       3      6.000000  
+-----------------------------------------------------------------------------
+Total 25 references                                   787.000000
+1

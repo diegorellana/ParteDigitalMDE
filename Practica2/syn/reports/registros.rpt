@@ -1,0 +1,4 @@
+Diseno   : spi_master
+Libreria : class.db
+Biestables disparados por flanco : 66
+Latches (sensibles a nivel)      : 0
