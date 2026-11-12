@@ -1,0 +1,21 @@
+# Simulación ejecutada con Questa 2025.2 el 11/11/2026, con rtl/ctes_pkg.vhd y rtl/spi_master.vhd definitivos
+# (salida de: do ../bin/simular.do  y  run -all)
+# vcom [work] rtl/ctes_pkg.vhd           -> Errors: 0, Warnings: 0
+# vcom [work] rtl/spi_master.vhd         -> Errors: 0, Warnings: 0
+# vcom [work] testbench/tb_spi_master.vhd-> Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_spi_master
+# ** Note: (vopt-143) Recognized 1 FSM in architecture body "spi_master(rtl)".
+run -all
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /tb_spi_master/dut
+# ** Note: Comienza una transacción SPI, con M-S = 0x1234 y S-M = 0x5678
+#    Time: 210 ns  Iteration: 1  Instance: /tb_spi_master
+# ** Note: Comienza una transacción SPI, con M-S = 0x0000 y S-M = 0xFFFF
+#    Time: 2060 ns  Iteration: 1  Instance: /tb_spi_master
+# ** Note: Comienza una transacción SPI, con M-S = 0xAAAA y S-M = 0x5555
+#    Time: 3910 ns  Iteration: 1  Instance: /tb_spi_master
+# ** Note: Comienza una transacción SPI, con M-S = 0x8000 y S-M = 0x0001
+#    Time: 5760 ns  Iteration: 1  Instance: /tb_spi_master
+# ** Note: Simulación completa
+#    Time: 7600 ns  Iteration: 3  Instance: /tb_spi_master
+# Break in Process p_estimulos at ../../testbench/tb_spi_master.vhd line 195
