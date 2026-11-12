@@ -1,0 +1,77 @@
+[N
+9
+4
+9 gen_depth
+3
+3 rtl
+6
+7 tb_fifo
+5
+9 gen_width
+7
+10 behavioral
+2
+4 fifo
+9
+7 C_WIDTH
+8
+7 C_DEPTH
+1
+80 /alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/sim/run/work
+]
+[G
+1
+2
+3
+1
+4
+1
+0
+4
+0
+0 0
+0
+0
+]
+[G
+1
+2
+3
+1
+5
+1
+0
+16
+0
+0 0
+0
+0
+]
+[G
+1
+6
+7
+1
+9
+1
+0
+16
+0
+0 0
+0
+0
+]
+[G
+1
+6
+7
+1
+8
+1
+0
+4
+0
+0 0
+0
+0
+]

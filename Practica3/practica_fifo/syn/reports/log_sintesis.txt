@@ -1,0 +1,445 @@
+Current time:       Thu Nov 12 12:40:48 2026
+Hostname:           cadelec04
+CPU Model:          Intel(R) Xeon(R) CPU E3-1270 v5 @ 3.60GHz
+CPU Details:        Cores = 8 : Sockets = 1 : Cache Size = 8192 KB : Freq = 3.83 GHz
+OS:                 Linux 4.18.0-553.124.1.el8_10.x86_64
+RAM:                 31 GB (Free  21 GB)
+Swap:                23 GB (Free  23 GB)
+Work Filesystem:    /alumnos mounted to srvlinuxtecnun:/alumnos
+Tmp Filesystem:     / mounted to /dev/sda2
+Work Disk:          515 GB (Free 398 GB)
+Tmp Disk:            62 GB (Free  50 GB)
+
+CPU Load: 3%, Ram Free: 21 GB, Swap Free: 23 GB, Work Disk Free: 398 GB, Tmp Disk Free: 50 GB
+#==============================================================================
+# sintesis.tcl - sintetiza el diseño con Design Compiler.
+#
+# Es una plantilla: hay que rellenar todo lo que pone
+# A_DEFINIR_POR_EL_ALUMNO, y la lista de fuentes de ../bin/fuentes.tcl.
+#
+# Todas las rutas del script asumen que se ejecuta desde syn/run
+#
+# Dos formas de usarlo:
+#
+#   a) a mano, copiando cada apartado en el intérprete de dc_shell, en orden;
+#   b) de una vez, desde la terminal. Hay dos formas, y las dos dejan el log
+#      en un archivo y además lo enseñan por pantalla mientras corre:
+#
+#        dc_shell -f ../bin/sintesis.tcl -output_log_file ../reports/log_sintesis.txt
+#        dc_shell -f ../bin/sintesis.tcl 2>&1 | tee ../reports/log_sintesis.txt
+#
+#      La primera es la opción propia de la herramienta. La segunda es la del
+#      shell: el 2>&1 lleva la salida de error al mismo sitio que la normal,
+#      para que tee las recoja las dos.
+#
+#      El apartado 12 cierra la sesión: sin él, dc_shell se queda esperando
+#      órdenes y el volcado nunca termina.
+#==============================================================================
+#------------------------------------------------------------------------------
+# 1. Qué se sintetiza
+#------------------------------------------------------------------------------
+set C_TOP                  fifo
+fifo
+set C_ARQUITECTURA         rtl
+rtl
+set C_LIBRERIA_TRABAJO     WORK
+WORK
+# No hay librería adicional, el script la crea vacía
+set C_LIBRERIA_ADICIONAL   LIB_VACIA
+LIB_VACIA
+set C_PUERTO_RELOJ         clk
+clk
+set C_PERIODO_NS           10.0
+10.0
+set C_RETARDO_ENTRADA_NS   2.0
+2.0
+set C_RETARDO_SALIDA_NS    2.0
+2.0
+set C_ESTANDAR_VHDL        2008
+2008
+set C_LIBRERIA_TECNOLOGICA class.db
+class.db
+set C_ESFUERZO             medium
+medium
+set C_CAMINOS_INFORME      5
+5
+#------------------------------------------------------------------------------
+# 2. Parar en el primer error
+#
+#    Sin esto, analyze, elaborate, link y compile se encadenan pase lo que
+#    pase: con una errata en el VHDL el script llega hasta el final, escupe
+#    una cascada de errores y deja informes escritos que parecen buenos.
+#
+#    Hacen falta las dos variables. sh_continue_on_error manda sobre la otra,
+#    así que poner solo sh_script_stop_severity no hace nada. Van explícitas
+#    porque su valor por defecto no es el mismo en todas las instalaciones, y
+#    un script que se comporta distinto según la máquina no sirve.
+#------------------------------------------------------------------------------
+set_app_var sh_continue_on_error   false
+false
+set_app_var sh_script_stop_severity E
+E
+#------------------------------------------------------------------------------
+# 3. Cargar la lista de fuentes
+#------------------------------------------------------------------------------
+source ../bin/fuentes.tcl
+rtl/fifo.vhd
+#------------------------------------------------------------------------------
+# 4. Librería tecnológica
+#
+#    class.db es la librería de ejemplo que Synopsys distribuye con la propia
+#    herramienta, así que no hace falta ningún PDK.
+#
+#    target_library  es con lo que la herramienta puede construir el circuito.
+#    link_library    es con lo que puede resolver referencias; el * delante
+#                    significa «y además lo que ya esté cargado en memoria».
+#------------------------------------------------------------------------------
+set dir_tecnologia $env(SYNOPSYS)/libraries/syn
+/apps/synopsys/SYN_2024.09-SP2/libraries/syn
+set search_path    [concat $search_path $dir_tecnologia]
+. /apps/synopsys/SYN_2024.09-SP2/libraries/syn /apps/synopsys/SYN_2024.09-SP2/dw/syn_ver /apps/synopsys/SYN_2024.09-SP2/dw/sim_ver /apps/synopsys/SYN_2024.09-SP2/libraries/syn
+set target_library $C_LIBRERIA_TECNOLOGICA
+class.db
+set link_library   [list * $C_LIBRERIA_TECNOLOGICA]
+* class.db
+set symbol_library {}
+#------------------------------------------------------------------------------
+# 5. Limpiar y definir las librerías de trabajo
+#
+#    Cada ejecución parte de cero: se borran los directorios de las librerías y
+#    se vuelven a crear, para no arrastrar unidades analizadas de una sesión
+#    anterior.
+#------------------------------------------------------------------------------
+file delete -force ./$C_LIBRERIA_ADICIONAL
+file mkdir         ./$C_LIBRERIA_ADICIONAL
+define_design_lib $C_LIBRERIA_ADICIONAL -path ./$C_LIBRERIA_ADICIONAL
+1
+file delete -force ./$C_LIBRERIA_TRABAJO
+file mkdir         ./$C_LIBRERIA_TRABAJO
+define_design_lib $C_LIBRERIA_TRABAJO -path ./$C_LIBRERIA_TRABAJO
+1
+# Los informes de la ejecución anterior, fuera: lo que quede en reports/ es
+# siempre de la última síntesis. El patrón es *.rpt y no *, porque el log de
+# la sesión se escribe en esa misma carpeta y el shell ya lo tiene abierto.
+foreach informe [glob -nocomplain ../reports/*.rpt] { file delete -force $informe }
+#------------------------------------------------------------------------------
+# 6. Analizar las fuentes, en el orden de la lista
+#
+#    Si el diseño usa una librería adicional, esta se analiza primero.
+#------------------------------------------------------------------------------
+# Versión del lenguaje con la que se leen las fuentes. VHDL-2008 no está activo
+# por defecto. Es una variable de la herramienta, no una opción de `analyze`:
+# vale para todo lo que se analice después.
+set hdlin_vhdl_std $C_ESTANDAR_VHDL
+2008
+foreach fuente $custom_library_sources {
+    echo "analyze \[$C_LIBRERIA_ADICIONAL\] $fuente"
+    analyze -format vhdl -library $C_LIBRERIA_ADICIONAL ../../$fuente
+}
+foreach fuente $work_sources {
+    echo "analyze \[$C_LIBRERIA_TRABAJO\] $fuente"
+    analyze -format vhdl -library $C_LIBRERIA_TRABAJO ../../$fuente
+}
+analyze [WORK] rtl/fifo.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration FIFO
+Compiling Architecture RTL of FIFO
+Presto compilation completed successfully.
+Loading db file '/apps/synopsys/SYN_2024.09-SP2/libraries/syn/class.db'
+#------------------------------------------------------------------------------
+# 7. Elaborar y enlazar
+#
+#    analyze comprueba la sintaxis de cada archivo por separado. elaborate
+#    construye el diseño: resuelve genéricos, instancia los componentes y deja
+#    en memoria una jerarquía sobre la que ya se puede trabajar.
+#------------------------------------------------------------------------------
+# Los genéricos de la FIFO se fijan aquí (depth 4, width 16 para la entrega;
+# para la pregunta 1 se cambia a 128)
+set C_DEPTH 4
+4
+set C_WIDTH 16
+16
+elaborate $C_TOP -architecture $C_ARQUITECTURA -library $C_LIBRERIA_TRABAJO \
+    -parameters "gen_depth=$C_DEPTH,gen_width=$C_WIDTH"
+Loading db file '/apps/synopsys/SYN_2024.09-SP2/libraries/syn/gtech.db'
+Loading db file '/apps/synopsys/SYN_2024.09-SP2/libraries/syn/standard.sldb'
+  Loading link library 'class'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+
+Inferred memory devices in process in routine 'fifo_gen_depth4_gen_width16' in file
+         ../../rtl/fifo.vhd'.
+====================================================================================
+|     Register Name     |   Type    | Width | Bus | MB |  Set  | Reset | ST | Line |
+====================================================================================
+| reg_write_pointer_reg | Flip-flop |   2   |  Y  | N  | None  | Async | N  | 115  |
+| reg_read_pointer_reg  | Flip-flop |   2   |  Y  | N  | None  | Async | N  | 133  |
+| reg_data_counter_reg  | Flip-flop |   3   |  Y  | N  | None  | Async | N  | 154  |
+|     reg_array_reg     | Flip-flop |  64   |  Y  | N  | None  | None  | N  | 173  |
+|   reg_data_read_reg   | Flip-flop |  16   |  Y  | N  | None  | None  | N  | 187  |
+|  reg_read_valid_reg   | Flip-flop |   1   |  N  | N  | None  | Async | N  | 201  |
+====================================================================================
+Statistics for MUX_OPs
+=====================================================================
+|        block name/line          | Inputs | Outputs | # sel inputs |
+=====================================================================
+| fifo_gen_depth4_gen_width16/191 |   4    |   16    |      2       |
+=====================================================================
+Presto compilation completed successfully. (fifo_gen_depth4_gen_width16)
+Module: fifo_gen_depth4_gen_width16, Ports: 39, Input: 20, Output: 19, Inout: 0
+Module: fifo_gen_depth4_gen_width16, Registers: 88, Async set/reset: 8, Sync set/reset: 0
+Information: Module fifo_gen_depth4_gen_width16 report end. (ELAB-965)
+Elaborated 1 design.
+Current design is now 'fifo_gen_depth4_gen_width16'.
+1
+# Con -parameters DC llama al diseño fifo_gen_depth4_gen_width16. Lo renombro
+# a fifo para que current_design y los nombres de la netlist sigan valiendo.
+rename_design [get_object_name [current_design]] $C_TOP
+Current design is 'fifo_gen_depth4_gen_width16'.
+Information: Renaming design /alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/syn/run/fifo_gen_depth4_gen_width16.db:fifo_gen_depth4_gen_width16 to /alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/syn/run/fifo_gen_depth4_gen_width16.db:fifo. (UIMG-45)
+Current design is 'fifo'.
+1
+current_design $C_TOP
+Current design is 'fifo'.
+{fifo}
+link
+
+  Linking design 'fifo'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  fifo                        /alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/syn/run/fifo_gen_depth4_gen_width16.db
+  class (library)             /apps/synopsys/SYN_2024.09-SP2/libraries/syn/class.db
+
+1
+#------------------------------------------------------------------------------
+# 8. Restricciones
+#
+#    Sin reloj declarado no hay análisis temporal: la herramienta no sabe entre
+#    qué dos instantes tiene que caber la lógica.
+#
+#    Los retardos de entrada y de salida reservan la parte del periodo que se
+#    consume FUERA de este bloque: lo que tarda el circuito de delante en poner
+#    el dato, y lo que necesita el de detrás para recogerlo.
+#------------------------------------------------------------------------------
+create_clock -name clk -period $C_PERIODO_NS [get_ports $C_PUERTO_RELOJ]
+1
+set entradas_datos [remove_from_collection [all_inputs] [get_ports $C_PUERTO_RELOJ]]
+{reset_n write_enable data_to_write[15] data_to_write[14] data_to_write[13] data_to_write[12] data_to_write[11] data_to_write[10] data_to_write[9] data_to_write[8] data_to_write[7] data_to_write[6] data_to_write[5] data_to_write[4] data_to_write[3] data_to_write[2] data_to_write[1] data_to_write[0] read_enable}
+set_input_delay  $C_RETARDO_ENTRADA_NS -clock clk $entradas_datos
+1
+set_output_delay $C_RETARDO_SALIDA_NS  -clock clk [all_outputs]
+1
+#------------------------------------------------------------------------------
+# 9. Sintetizar
+#------------------------------------------------------------------------------
+compile -map_effort $C_ESFUERZO
+CPU Load: 3%, Ram Free: 21 GB, Swap Free: 23 GB, Work Disk Free: 398 GB, Tmp Disk Free: 50 GB
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | W-2024.09-DWBB_202409.2 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler                                                                   |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 152                                    |
+| Number of User Hierarchies                              | 0                                      |
+| Sequential Cell Count                                   | 88                                     |
+| Macro Count                                             | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 2                                      |
+| Number of VT Class                                      | 0                                      |
+| Number of Clocks                                        | 1                                      |
+| Number of Dont Touch Cells                              | 18                                     |
+| Number of Dont Touch Nets                               | 0                                      |
+| Number of Size Only Cells                               | 0                                      |
+| Design with UPF Data                                    | false                                  |
+====================================================================================================
+
+Information: There are 4 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'fifo'
+Module: DW01_dec_width3, Ports: 6, Input: 3, Output: 3, Inout: 0
+Module: DW01_dec_width3, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_inc_width3, Ports: 6, Input: 3, Output: 3, Inout: 0
+Module: DW01_inc_width3, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_inc_width2, Ports: 4, Input: 2, Output: 2, Inout: 0
+Module: DW01_inc_width2, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp2_width4, Ports: 12, Input: 10, Output: 2, Inout: 0
+Module: DW01_cmp2_width4, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:00    1173.0      0.00       0.0       0.0                          
+    0:00:00    1173.0      0.00       0.0       0.0                          
+    0:00:00    1173.0      0.00       0.0       0.0                          
+    0:00:00    1173.0      0.00       0.0       0.0                          
+    0:00:00    1173.0      0.00       0.0       0.0                          
+    0:00:00     990.0      0.00       0.0       0.0                          
+    0:00:00     989.0      0.00       0.0       0.0                          
+    0:00:00     989.0      0.00       0.0       0.0                          
+    0:00:00     989.0      0.00       0.0       0.0                          
+    0:00:00     989.0      0.00       0.0       0.0                          
+    0:00:00     989.0      0.00       0.0       0.0                          
+    0:00:00     989.0      0.00       0.0       0.0                          
+    0:00:00     989.0      0.00       0.0       0.0                          
+    0:00:00     989.0      0.00       0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:00     989.0      0.00       0.0       0.0                          
+    0:00:00     989.0      0.00       0.0       0.0                          
+    0:00:00     989.0      0.00       0.0       0.0                          
+    0:00:00     989.0      0.00       0.0       0.0                          
+    0:00:00     986.0      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:00     986.0      0.00       0.0       0.0                          
+    0:00:00     986.0      0.00       0.0       0.0                          
+    0:00:00     982.0      0.00       0.0       0.0                          
+    0:00:00     975.0      0.00       0.0       0.0                          
+    0:00:00     974.0      0.00       0.0       0.0                          
+    0:00:00     974.0      0.00       0.0       0.0                          
+    0:00:00     974.0      0.00       0.0       0.0                          
+    0:00:00     974.0      0.00       0.0       0.0                          
+    0:00:00     972.0      0.00       0.0       0.0                          
+    0:00:00     972.0      0.00       0.0       0.0                          
+    0:00:00     972.0      0.00       0.0       0.0                          
+    0:00:00     972.0      0.00       0.0       0.0                          
+    0:00:00     972.0      0.00       0.0       0.0                          
+    0:00:00     972.0      0.00       0.0       0.0                          
+    0:00:00     972.0      0.00       0.0       0.0                          
+Loading db file '/apps/synopsys/SYN_2024.09-SP2/libraries/syn/class.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+CPU Load: 3%, Ram Free: 21 GB, Swap Free: 23 GB, Work Disk Free: 398 GB, Tmp Disk Free: 50 GB
+Information: Total number of MV cells in the design.
+----------------------------------------------------------------------------------------------------
+ MV Cells                                           Total Number                                   
+----------------------------------------------------------------------------------------------------
+ Level Shifter:                                     0                                             
+ Enable Level Shifter:                              0                                             
+ Isolation Cell:                                    0                                             
+ Retention Cell:                                    0                                             
+ Retention Clamp Cell:                              0                                             
+ Switch Cell:                                       0                                             
+ Always-On Cell:                                    0                                             
+ Repeater Cell:                                     0                                             
+
+----------------------------------------------------------------------------------------------------
+Unmapped MV Cells 
+----------------------------------------------------------------------------------------------------
+0 Isolation Cells are unmapped 
+0 Retention Clamp Cells are unmapped 
+----------------------------------------------------------------------------------------------------
+1
+#------------------------------------------------------------------------------
+# 10. Informes
+#------------------------------------------------------------------------------
+check_design                                > ../reports/check_design.rpt
+report_area                                 > ../reports/area.rpt
+report_timing -max_paths $C_CAMINOS_INFORME > ../reports/timing.rpt
+report_qor                                  > ../reports/qor.rpt
+report_reference                            > ../reports/referencias.rpt
+#------------------------------------------------------------------------------
+# 11. Biestables frente a latches
+#
+#     Un proceso combinacional con una asignación incompleta hace que la
+#     herramienta infiera un latch. Este apartado cuenta cuántos registros
+#     disparados por flanco (biestables) y cuántos sensibles a nivel (latches)
+#     tiene el circuito sintetizado y, si hay latches, los lista por su nombre
+#     para poder localizarlos.
+#------------------------------------------------------------------------------
+proc cuantos {coleccion} {
+    if {$coleccion eq ""} { return 0 }
+    return [sizeof_collection $coleccion]
+}
+set col_ff  [all_registers -edge_triggered]
+{reg_write_pointer_reg[0] reg_read_valid_reg reg_data_read_reg[0] reg_data_read_reg[1] reg_data_read_reg[2] reg_data_read_reg[3] reg_data_read_reg[4] reg_data_read_reg[5] reg_data_read_reg[6] reg_data_read_reg[7] reg_data_read_reg[8] reg_data_read_reg[9] reg_data_read_reg[10] reg_data_read_reg[11] reg_data_read_reg[12] reg_data_read_reg[13] reg_data_read_reg[14] reg_data_read_reg[15] reg_array_reg[3][0] reg_array_reg[3][1] reg_array_reg[3][2] reg_array_reg[3][3] reg_array_reg[3][4] reg_array_reg[3][5] reg_array_reg[3][6] reg_array_reg[3][7] reg_array_reg[3][8] reg_array_reg[3][9] reg_array_reg[3][10] reg_array_reg[3][11] reg_array_reg[3][12] reg_array_reg[3][13] reg_array_reg[3][14] reg_array_reg[3][15] reg_array_reg[2][0] reg_array_reg[2][1] reg_array_reg[2][2] reg_array_reg[2][3] reg_array_reg[2][4] reg_array_reg[2][5] reg_array_reg[2][6] reg_array_reg[2][7] reg_array_reg[2][8] reg_array_reg[2][9] reg_array_reg[2][10] reg_array_reg[2][11] reg_array_reg[2][12] reg_array_reg[2][13] reg_array_reg[2][14] reg_array_reg[2][15] reg_array_reg[1][0] reg_array_reg[1][1] reg_array_reg[1][2] reg_array_reg[1][3] reg_array_reg[1][4] reg_array_reg[1][5] reg_array_reg[1][6] reg_array_reg[1][7] reg_array_reg[1][8] reg_array_reg[1][9] reg_array_reg[1][10] reg_array_reg[1][11] reg_array_reg[1][12] reg_array_reg[1][13] reg_array_reg[1][14] reg_array_reg[1][15] reg_array_reg[0][0] reg_array_reg[0][1] reg_array_reg[0][2] reg_array_reg[0][3] reg_array_reg[0][4] reg_array_reg[0][5] reg_array_reg[0][6] reg_array_reg[0][7] reg_array_reg[0][8] reg_array_reg[0][9] reg_array_reg[0][10] reg_array_reg[0][11] reg_array_reg[0][12] reg_array_reg[0][13] reg_array_reg[0][14] reg_array_reg[0][15] reg_write_pointer_reg[1] reg_data_counter_reg[2] reg_data_counter_reg[1] reg_read_pointer_reg[1] reg_read_pointer_reg[0] reg_data_counter_reg[0]}
+set col_lat [all_registers -level_sensitive]
+set f [open ../reports/registros.rpt w]
+file15
+puts $f "Diseno   : $C_TOP"
+puts $f "Libreria : $C_LIBRERIA_TECNOLOGICA"
+puts $f "Biestables disparados por flanco : [cuantos $col_ff]"
+puts $f "Latches (sensibles a nivel)      : [cuantos $col_lat]"
+if {[cuantos $col_lat] > 0} {
+    puts $f ""
+    puts $f "Latches inferidos:"
+    foreach_in_collection celda $col_lat {
+        puts $f "  [get_object_name $celda]"
+    }
+}
+close $f
+echo "=============================================================="
+==============================================================
+echo " $C_TOP  ->  [cuantos $col_ff] biestables, [cuantos $col_lat] latches"
+ fifo  ->  88 biestables, 0 latches
+echo " Informes en ../reports/"
+ Informes en ../reports/
+echo "=============================================================="
+==============================================================
+#------------------------------------------------------------------------------
+# 12. Netlist y fin de la sesión
+#
+#     Comentar el exit si se está ejecutando el script a mano y se quiere
+#     seguir trabajando en el intérprete.
+#------------------------------------------------------------------------------
+write -format verilog -hierarchy -output ../out/$C_TOP.v
+Writing verilog file '/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/syn/out/fifo.v'.
+1
+write -format ddc     -hierarchy -output ../out/$C_TOP.ddc
+Writing ddc file '../out/fifo.ddc'.
+1
+exit
+
+Memory usage for this session 141 Mbytes.
+Memory usage for this session including child processes 141 Mbytes.
+CPU usage for this session 4 seconds ( 0.00 hours ).
+Elapsed time for this session 7 seconds ( 0.00 hours ).
+
+Thank you...
+

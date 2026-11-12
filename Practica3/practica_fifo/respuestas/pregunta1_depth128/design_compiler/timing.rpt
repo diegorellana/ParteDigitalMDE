@@ -1,0 +1,257 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 5
+Design : fifo
+Version: W-2024.09-SP2
+Date   : Thu Nov 12 12:42:39 2026
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: nom_pvt   Library: class
+Wire Load Model Mode: top
+
+  Startpoint: reg_read_pointer_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: reg_data_read_reg[7]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fifo               20x20                 class
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  reg_read_pointer_reg[1]/CP (FD2)         0.00 #     0.00 r
+  reg_read_pointer_reg[1]/QN (FD2)         1.99       1.99 r
+  U7502/Z (IVI)                            0.23       2.22 f
+  U3606/Z (AN2I)                           0.66       2.87 f
+  U7313/Z (ND2I)                           0.50       3.38 r
+  U7475/Z (IVI)                            0.23       3.60 f
+  U2942/Z (IVI)                            0.26       3.87 r
+  U2856/Z (EO1P)                           1.38       5.25 r
+  U2857/Z (ND3P)                           0.51       5.76 f
+  U3298/Z (IVI)                            0.26       6.02 r
+  U3297/Z (ND2I)                           0.22       6.24 f
+  U3331/Z (AO3P)                           0.75       6.98 r
+  U6445/Z (NR2I)                           0.26       7.24 f
+  U7339/Z (AO2P)                           1.18       8.42 r
+  U2892/Z (ND4P)                           0.56       8.98 f
+  U2893/Z (IVI)                            0.31       9.28 r
+  U3219/Z (ND3P)                           0.51       9.80 f
+  U7535/Z (IVI)                            0.31      10.10 r
+  U7536/Z (MUX21L)                         0.47      10.57 f
+  reg_data_read_reg[7]/D (FD1)             0.00      10.57 f
+  data arrival time                                  10.57
+
+  clock clk (rise edge)                   10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  reg_data_read_reg[7]/CP (FD1)            0.00      10.00 r
+  library setup time                      -0.80       9.20
+  data required time                                  9.20
+  -----------------------------------------------------------
+  data required time                                  9.20
+  data arrival time                                 -10.57
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -1.37
+
+
+  Startpoint: reg_read_pointer_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: reg_data_read_reg[10]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fifo               20x20                 class
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  reg_read_pointer_reg[1]/CP (FD2)         0.00 #     0.00 r
+  reg_read_pointer_reg[1]/QN (FD2)         1.99       1.99 r
+  U7502/Z (IVI)                            0.23       2.22 f
+  U3606/Z (AN2I)                           0.66       2.87 f
+  U7309/Z (ND2I)                           0.56       3.44 r
+  U3178/Z (IVI)                            0.52       3.96 f
+  U3182/Z (IVI)                            0.49       4.45 r
+  U2979/Z (EON1P)                          1.01       5.45 f
+  U6727/Z (AO1P)                           1.48       6.93 r
+  U3255/Z (AN2I)                           0.36       7.30 r
+  U3256/Z (NR2I)                           0.22       7.52 f
+  U3283/Z (AN3)                            0.96       8.48 f
+  U3284/Z (AN2I)                           0.64       9.12 f
+  U7340/Z (ND4P)                           0.76       9.88 r
+  U7540/Z (IVI)                            0.20      10.08 f
+  U7541/Z (MUX21L)                         0.48      10.56 r
+  reg_data_read_reg[10]/D (FD1)            0.00      10.56 r
+  data arrival time                                  10.56
+
+  clock clk (rise edge)                   10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  reg_data_read_reg[10]/CP (FD1)           0.00      10.00 r
+  library setup time                      -0.80       9.20
+  data required time                                  9.20
+  -----------------------------------------------------------
+  data required time                                  9.20
+  data arrival time                                 -10.56
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -1.36
+
+
+  Startpoint: reg_read_pointer_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: reg_data_read_reg[11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fifo               20x20                 class
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  reg_read_pointer_reg[1]/CP (FD2)         0.00 #     0.00 r
+  reg_read_pointer_reg[1]/Q (FD2)          1.83       1.83 r
+  U3035/Y (IVDAP)                          0.25       2.08 f
+  U7365/Z (ND2I)                           0.27       2.35 r
+  U7363/Z (IVI)                            0.23       2.58 f
+  U2806/Z (AN2I)                           0.73       3.32 f
+  U7375/Z (IVI)                            0.51       3.83 r
+  U2509/Z1 (B3IP)                          0.31       4.13 f
+  U2508/Z (IVI)                            0.51       4.64 r
+  U6813/Z (AO4)                            0.61       5.25 f
+  U2964/Z (NR4P)                           1.60       6.85 r
+  U6807/Z (AO2)                            0.62       7.47 f
+  U3282/Z (AN2I)                           0.64       8.11 f
+  U2894/Z (ND3P)                           0.76       8.88 r
+  U2895/Z (IVI)                            0.20       9.07 f
+  U7329/Z (ND4P)                           0.76       9.83 r
+  U7542/Z (IVI)                            0.20      10.03 f
+  U2495/Z (MUX21LP)                        0.52      10.55 r
+  reg_data_read_reg[11]/D (FD1)            0.00      10.55 r
+  data arrival time                                  10.55
+
+  clock clk (rise edge)                   10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  reg_data_read_reg[11]/CP (FD1)           0.00      10.00 r
+  library setup time                      -0.80       9.20
+  data required time                                  9.20
+  -----------------------------------------------------------
+  data required time                                  9.20
+  data arrival time                                 -10.55
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -1.35
+
+
+  Startpoint: reg_read_pointer_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: reg_data_read_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fifo               20x20                 class
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  reg_read_pointer_reg[1]/CP (FD2)         0.00 #     0.00 r
+  reg_read_pointer_reg[1]/Q (FD2)          1.83       1.83 r
+  U3035/Y (IVDAP)                          0.25       2.08 f
+  U7365/Z (ND2I)                           0.27       2.35 r
+  U7363/Z (IVI)                            0.23       2.58 f
+  U7364/Z (AN2I)                           0.77       3.36 f
+  U2796/Z (IVI)                            0.40       3.75 r
+  U3093/Z1 (B3IP)                          0.24       3.99 f
+  U6172/Z (AO1P)                           1.67       5.66 r
+  U3317/Z (ND4P)                           0.63       6.29 f
+  U7341/Z (AO3P)                           0.75       7.04 r
+  U6171/Z (NR2I)                           0.22       7.26 f
+  U2989/Z (ND2I)                           0.27       7.53 r
+  U2991/Z (AN2I)                           0.36       7.89 r
+  U7327/Z (AN4P)                           1.38       9.27 r
+  U7328/Z (ND4P)                           0.56       9.82 f
+  U7531/Z (IVI)                            0.31      10.13 r
+  U7492/Z (MUX21LP)                        0.42      10.55 f
+  reg_data_read_reg[4]/D (FD1)             0.00      10.55 f
+  data arrival time                                  10.55
+
+  clock clk (rise edge)                   10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  reg_data_read_reg[4]/CP (FD1)            0.00      10.00 r
+  library setup time                      -0.80       9.20
+  data required time                                  9.20
+  -----------------------------------------------------------
+  data required time                                  9.20
+  data arrival time                                 -10.55
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -1.35
+
+
+  Startpoint: reg_read_pointer_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: reg_data_read_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fifo               20x20                 class
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  reg_read_pointer_reg[1]/CP (FD2)         0.00 #     0.00 r
+  reg_read_pointer_reg[1]/QN (FD2)         1.99       1.99 r
+  U7502/Z (IVI)                            0.23       2.22 f
+  U3606/Z (AN2I)                           0.66       2.87 f
+  U7309/Z (ND2I)                           0.56       3.44 r
+  U3176/Z (IVI)                            0.31       3.74 f
+  U3201/Z (IVI)                            0.40       4.14 r
+  U3203/Z (IVI)                            0.23       4.37 f
+  U6080/Z (AO2)                            1.31       5.68 r
+  U2809/Z (AN2I)                           0.36       6.04 r
+  U2918/Z (ND2I)                           0.22       6.26 f
+  U3329/Z (AO3P)                           0.75       7.00 r
+  U6079/Z (NR2I)                           0.26       7.26 f
+  U7336/Z (AO2P)                           1.18       8.44 r
+  U2882/Z (ND4P)                           0.56       9.00 f
+  U2883/Z (IVI)                            0.31       9.31 r
+  U3213/Z (ND3P)                           0.51       9.82 f
+  U7530/Z (IVI)                            0.31      10.12 r
+  U3227/Z (MUX21LP)                        0.42      10.54 f
+  reg_data_read_reg[3]/D (FD1)             0.00      10.54 f
+  data arrival time                                  10.54
+
+  clock clk (rise edge)                   10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  reg_data_read_reg[3]/CP (FD1)            0.00      10.00 r
+  library setup time                      -0.80       9.20
+  data required time                                  9.20
+  -----------------------------------------------------------
+  data required time                                  9.20
+  data arrival time                                 -10.54
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -1.34
+
+
+1

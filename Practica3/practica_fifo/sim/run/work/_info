@@ -1,0 +1,210 @@
+m255
+K4
+z2
+Z0 !s12c _opt1
+Z1 !s99 nomlopt
+Z2 !s12c _opt2
+R1
+R0
+R1
+Z3 !s12c _opt
+R1
+R2
+R1
+R0
+R1
+R3
+R1
+!s11e vcom 2025.3 2025.09, Sep 15 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z4 d/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/sim/run
+T_opt
+!i145 1
+!i144 0
+!s110 1794483014
+VRkN;k`6mCF4h:0QAKRf4h2
+Z5 04 7 10 work tb_fifo behavioral 1
+=1-1866da22bdde-6af5a344-9f7ab-28c5
+R1
+Z6 !s12f OEM100
+Z7 !s12b OEM100
+Z8 !s124 OEM100
+Z9 !s135 nogc
+o-quiet -auto_acc_if_foreign -work work -g C_DEPTH=128
+Z10 tCvgOpt 0
+n@_opt
+Z11 OL;O;2025.3;82
+R4
+T_opt1
+!i145 1
+!i144 0
+!s110 1794484886
+VRM[fezUS?GaoQ5VWT?4V80
+04 18 10 work tb_fifo_cronograma behavioral 1
+=1-1866da22bdde-6af5aa95-57c5c-72c9
+R1
+R6
+R7
+R8
+R9
+o-quiet -auto_acc_if_foreign -work work +acc
+R10
+n@_opt1
+R11
+T_opt2
+!i145 1
+!i144 0
+!s110 1794484877
+VB2d[M4iI[7G:WD9>bAWm72
+R5
+=1-1866da22bdde-6af5aa8a-6b0cc-71f5
+R1
+R6
+R7
+R8
+R9
+o-quiet -auto_acc_if_foreign -work work
+R10
+n@_opt2
+R11
+R4
+Efifo
+Z12 w1794482902
+Z13 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z14 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 2
+R4
+Z15 8../../rtl/fifo.vhd
+Z16 F../../rtl/fifo.vhd
+l0
+L26 1
+VK`3<dCHI_RTz6U9zBF<XT2
+!s100 f>RC?95_1CdbVO3I4OHPL3
+Z17 OL;C;2025.3;82
+33
+Z18 !s110 1794484864
+!i10b 1
+Z19 !s108 1794484863.000000
+Z20 !s90 -2008|-work|work|../../rtl/fifo.vhd|../../testbench/tb_fifo.vhd|../../testbench/tb_fifo_cronograma.vhd|
+Z21 !s107 ../../testbench/tb_fifo_cronograma.vhd|../../testbench/tb_fifo.vhd|../../rtl/fifo.vhd|
+!i113 0
+Z22 o-2008 -work work
+Z23 tExplicit 1 CvgOpt 0
+Artl
+R13
+R14
+Z24 DEx4 work 4 fifo 0 22 K`3<dCHI_RTz6U9zBF<XT2
+!i122 2
+l65
+L44 171
+Vi@l7GQV_@5UF>JhK@a[LQ0
+!s100 2dN49W``YL]?PV4?_V0[U2
+R17
+33
+R18
+!i10b 1
+R19
+R20
+R21
+!i113 0
+R22
+R23
+Etb_fifo
+Z25 w1794482964
+Z26 DPx3 std 3 env 0 22 g[fj8WJKOa<0Y`zWY3UD70
+Z27 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
+Z28 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R13
+R14
+!i122 2
+R4
+Z29 8../../testbench/tb_fifo.vhd
+Z30 F../../testbench/tb_fifo.vhd
+l0
+L24 1
+Vc[?Sfoz=YPG=U7hJZM@j51
+!s100 U7mNZeY66<ooNg;Eob8kO1
+R17
+33
+R18
+!i10b 1
+R19
+R20
+R21
+!i113 0
+R22
+R23
+Abehavioral
+R24
+R26
+R27
+R28
+R13
+R14
+DEx4 work 7 tb_fifo 0 22 c[?Sfoz=YPG=U7hJZM@j51
+!i122 2
+l54
+L31 299
+VgB^k[Tk3X[5G1d4[:;Jeh1
+!s100 ^Xk7ghlfSGo_XSdC?NBHb1
+R17
+33
+R18
+!i10b 1
+R19
+R20
+R21
+!i113 0
+R22
+R23
+Etb_fifo_cronograma
+Z31 w1794484883
+R26
+R28
+R13
+R14
+!i122 3
+R4
+Z32 8../../testbench/tb_fifo_cronograma.vhd
+Z33 F../../testbench/tb_fifo_cronograma.vhd
+l0
+L21 1
+V4UOKLY8@mBA4F7zP4;4;R1
+!s100 W>T>NUXcI4]GcjU<cz>`m1
+R17
+33
+Z34 !s110 1794484884
+!i10b 1
+Z35 !s108 1794484884.000000
+Z36 !s90 -2008|-work|work|../../testbench/tb_fifo_cronograma.vhd|
+Z37 !s107 ../../testbench/tb_fifo_cronograma.vhd|
+!i113 0
+R22
+R23
+Abehavioral
+R24
+R26
+R28
+R13
+R14
+DEx4 work 18 tb_fifo_cronograma 0 22 4UOKLY8@mBA4F7zP4;4;R1
+!i122 3
+l60
+L24 116
+V`>d?>M^^P34H8UNASa`4I3
+!s100 mQ=n^CdgX0m`Y]E?e[m7H0
+R17
+33
+R34
+!i10b 1
+R35
+R36
+R37
+!i113 0
+R22
+R23

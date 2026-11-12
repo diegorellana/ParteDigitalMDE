@@ -1,0 +1,32 @@
+ 
+****************************************
+Report : area
+Design : fifo
+Version: W-2024.09-SP2
+Date   : Thu Nov 12 12:42:39 2026
+****************************************
+
+Information: Updating design information... (UID-85)
+Warning: Design 'fifo' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Library(s) Used:
+
+    class (File: /apps/synopsys/SYN_2024.09-SP2/libraries/syn/class.db)
+
+Number of ports:                           39
+Number of nets:                          9644
+Number of cells:                         7420
+Number of combinational cells:           5333
+Number of sequential cells:              2087
+Number of macros/black boxes:               0
+Number of buf/inv:                        907
+Number of references:                      55
+
+Combinational area:               9659.000000
+Buf/Inv area:                     1281.000000
+Noncombinational area:           14655.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 24314.000000
+Total area:                 undefined
+1

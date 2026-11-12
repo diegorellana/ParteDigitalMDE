@@ -1,0 +1,4 @@
+BEGIN 2:1:rtl:fifo:work
+    reg_data_counter :  2:1:behavioral:tb_fifo_cronograma:work
+
+END 

@@ -1,0 +1,4 @@
+Diseno   : fifo
+Libreria : class.db
+Biestables disparados por flanco : 88
+Latches (sensibles a nivel)      : 0

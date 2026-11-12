@@ -1,0 +1,30 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2.1 (lin64) Build 6403652 Thu Mar 19 13:47:00 MDT 2026
+| Date         : Thu Nov 12 12:55:54 2026
+| Host         : cadelec04 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
+| Command      : report_utilization -hierarchical -file reports/top_fifo_fpga_utilization_synth_hier.rpt
+| Design       : top_fifo_fpga
+| Device       : xc7a35tcpg236-1
+| Speed File   : -1
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++---------------------+-------------------------------+------------+------------+---------+------+-----+--------+--------+------------+
+|       Instance      |             Module            | Total LUTs | Logic LUTs | LUTRAMs | SRLs | FFs | RAMB36 | RAMB18 | DSP Blocks |
++---------------------+-------------------------------+------------+------------+---------+------+-----+--------+--------+------------+
+| top_fifo_fpga       |                         (top) |        716 |        716 |       0 |    0 | 656 |      0 |      1 |          0 |
+|   (top_fifo_fpga)   |                         (top) |          0 |          0 |       0 |    0 |  20 |      0 |      0 |          0 |
+|   u_display_adapter | seven_segment_display_adapter |         43 |         43 |       0 |    0 |  73 |      0 |      0 |          0 |
++---------------------+-------------------------------+------------+------------+---------+------+-----+--------+--------+------------+
+
+

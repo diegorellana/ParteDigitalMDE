@@ -1,0 +1,360 @@
+#-----------------------------------------------------------
+# Vivado v2025.2.1 (64-bit)
+# SW Build 6403652 on Thu Mar 19 13:47:00 MDT 2026
+# IP Build 6403511 on Thu Mar 19 12:41:45 MDT 2026
+# SharedData Build 6403650 on Thu Mar 19 14:02:13 MDT 2026
+# Start of session at: Thu Nov 12 12:42:09 2026
+# Process ID         : 12414
+# Current directory  : /alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/vivado_prj/fifo_basys3/fifo_basys3.runs/synth_1
+# Command line       : vivado -log top_fifo_fpga.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_fifo_fpga.tcl
+# Log file           : /alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/vivado_prj/fifo_basys3/fifo_basys3.runs/synth_1/top_fifo_fpga.vds
+# Journal file       : /alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/vivado_prj/fifo_basys3/fifo_basys3.runs/synth_1/vivado.jou
+# Running On         : cadelec04
+# Platform           : Rocky
+# Operating System   : Rocky Linux release 8.10 (Green Obsidian)
+# Processor Detail   : Intel(R) Xeon(R) CPU E3-1270 v5 @ 3.60GHz
+# CPU Frequency      : 3600.000 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 33628 MB
+# Swap memory        : 25769 MB
+# Total Virtual      : 59398 MB
+# Available Virtual  : 52903 MB
+#-----------------------------------------------------------
+source top_fifo_fpga.tcl -notrace
+Command: synth_design -top top_fifo_fpga -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 12484
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2558.156 ; gain = 483.188 ; free physical = 19183 ; free virtual = 49009
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'top_fifo_fpga' [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/top_fifo_fpga.vhd:27]
+INFO: [Synth 8-3491] module 'debouncer' declared at '/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/basys3_lib/debouncer.vhd:9' bound to instance 'u_debouncer_l' of component 'debouncer' [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/top_fifo_fpga.vhd:66]
+INFO: [Synth 8-638] synthesizing module 'debouncer' [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/basys3_lib/debouncer.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'debouncer' (0#1) [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/basys3_lib/debouncer.vhd:18]
+INFO: [Synth 8-3491] module 'debouncer' declared at '/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/basys3_lib/debouncer.vhd:9' bound to instance 'u_debouncer_r' of component 'debouncer' [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/top_fifo_fpga.vhd:88]
+INFO: [Synth 8-3491] module 'debouncer' declared at '/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/basys3_lib/debouncer.vhd:9' bound to instance 'u_debouncer' of component 'debouncer' [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/top_fifo_fpga.vhd:113]
+INFO: [Synth 8-3491] module 'debouncer' declared at '/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/basys3_lib/debouncer.vhd:9' bound to instance 'u_debouncer' of component 'debouncer' [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/top_fifo_fpga.vhd:113]
+INFO: [Synth 8-3491] module 'debouncer' declared at '/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/basys3_lib/debouncer.vhd:9' bound to instance 'u_debouncer' of component 'debouncer' [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/top_fifo_fpga.vhd:113]
+INFO: [Synth 8-3491] module 'debouncer' declared at '/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/basys3_lib/debouncer.vhd:9' bound to instance 'u_debouncer' of component 'debouncer' [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/top_fifo_fpga.vhd:113]
+INFO: [Synth 8-3491] module 'debouncer' declared at '/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/basys3_lib/debouncer.vhd:9' bound to instance 'u_debouncer' of component 'debouncer' [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/top_fifo_fpga.vhd:113]
+INFO: [Synth 8-3491] module 'debouncer' declared at '/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/basys3_lib/debouncer.vhd:9' bound to instance 'u_debouncer' of component 'debouncer' [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/top_fifo_fpga.vhd:113]
+INFO: [Synth 8-3491] module 'debouncer' declared at '/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/basys3_lib/debouncer.vhd:9' bound to instance 'u_debouncer' of component 'debouncer' [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/top_fifo_fpga.vhd:113]
+INFO: [Synth 8-3491] module 'debouncer' declared at '/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/basys3_lib/debouncer.vhd:9' bound to instance 'u_debouncer' of component 'debouncer' [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/top_fifo_fpga.vhd:113]
+INFO: [Synth 8-3491] module 'debouncer' declared at '/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/basys3_lib/debouncer.vhd:9' bound to instance 'u_debouncer' of component 'debouncer' [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/top_fifo_fpga.vhd:113]
+INFO: [Synth 8-3491] module 'debouncer' declared at '/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/basys3_lib/debouncer.vhd:9' bound to instance 'u_debouncer' of component 'debouncer' [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/top_fifo_fpga.vhd:113]
+INFO: [Synth 8-3491] module 'debouncer' declared at '/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/basys3_lib/debouncer.vhd:9' bound to instance 'u_debouncer' of component 'debouncer' [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/top_fifo_fpga.vhd:113]
+INFO: [Synth 8-3491] module 'debouncer' declared at '/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/basys3_lib/debouncer.vhd:9' bound to instance 'u_debouncer' of component 'debouncer' [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/top_fifo_fpga.vhd:113]
+INFO: [Synth 8-3491] module 'debouncer' declared at '/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/basys3_lib/debouncer.vhd:9' bound to instance 'u_debouncer' of component 'debouncer' [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/top_fifo_fpga.vhd:113]
+INFO: [Synth 8-3491] module 'debouncer' declared at '/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/basys3_lib/debouncer.vhd:9' bound to instance 'u_debouncer' of component 'debouncer' [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/top_fifo_fpga.vhd:113]
+INFO: [Synth 8-3491] module 'debouncer' declared at '/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/basys3_lib/debouncer.vhd:9' bound to instance 'u_debouncer' of component 'debouncer' [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/top_fifo_fpga.vhd:113]
+INFO: [Synth 8-3491] module 'debouncer' declared at '/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/basys3_lib/debouncer.vhd:9' bound to instance 'u_debouncer' of component 'debouncer' [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/top_fifo_fpga.vhd:113]
+INFO: [Synth 8-638] synthesizing module 'fifo' [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/rtl/fifo.vhd:44]
+	Parameter gen_depth bound to: 4 - type: integer 
+	Parameter gen_width bound to: 16 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'fifo' (0#1) [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/rtl/fifo.vhd:44]
+INFO: [Synth 8-3491] module 'seven_segment_display_adapter' declared at '/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/basys3_lib/seven_segment_display_adapter.vhd:12' bound to instance 'u_display_adapter' of component 'seven_segment_display_adapter' [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/top_fifo_fpga.vhd:159]
+INFO: [Synth 8-638] synthesizing module 'seven_segment_display_adapter' [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/basys3_lib/seven_segment_display_adapter.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'seven_segment_display_adapter' (0#1) [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/basys3_lib/seven_segment_display_adapter.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'top_fifo_fpga' (0#1) [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/rtl_fpga/top_fifo_fpga.vhd:27]
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[14] driven by constant 0
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[13] driven by constant 0
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[12] driven by constant 0
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[11] driven by constant 0
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[10] driven by constant 0
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[9] driven by constant 0
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[8] driven by constant 0
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[7] driven by constant 0
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[6] driven by constant 0
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[5] driven by constant 0
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[4] driven by constant 0
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[3] driven by constant 0
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[2] driven by constant 0
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[1] driven by constant 0
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2646.125 ; gain = 571.156 ; free physical = 19088 ; free virtual = 48916
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2658.000 ; gain = 583.031 ; free physical = 19080 ; free virtual = 48908
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2658.000 ; gain = 583.031 ; free physical = 19080 ; free virtual = 48908
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2658.000 ; gain = 0.000 ; free physical = 19079 ; free virtual = 48908
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/constraints/constraints.xdc]
+Finished Parsing XDC File [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/constraints/constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/constraints/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_fifo_fpga_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_fifo_fpga_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2768.738 ; gain = 0.000 ; free physical = 19006 ; free virtual = 48850
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.09 . Memory (MB): peak = 2768.773 ; gain = 0.000 ; free physical = 19004 ; free virtual = 48848
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2768.773 ; gain = 693.805 ; free physical = 19004 ; free virtual = 48848
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2776.742 ; gain = 701.773 ; free physical = 19004 ; free virtual = 48848
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2776.742 ; gain = 701.773 ; free physical = 19004 ; free virtual = 48848
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'reg_fsm_reg' in module 'debouncer'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                              001 |                               00
+         debounce_window |                              010 |                               01
+            check_output |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'reg_fsm_reg' using encoding 'one-hot' in module 'debouncer'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 2776.742 ; gain = 701.773 ; free physical = 19001 ; free virtual = 48846
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   15 Bit       Adders := 1     
+	   2 Input    3 Bit       Adders := 3     
+	   2 Input    2 Bit       Adders := 2     
++---Registers : 
+	               16 Bit    Registers := 1     
+	               15 Bit    Registers := 1     
+	                7 Bit    Registers := 5     
+	                6 Bit    Registers := 8     
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 60    
++---RAMs : 
+	               64 Bit	(4 X 16 bit)          RAMs := 1     
++---Muxes : 
+	   4 Input    7 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 2     
+	   3 Input    1 Bit        Muxes := 18    
+	   2 Input    1 Bit        Muxes := 4     
+	   4 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[14] driven by constant 0
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[13] driven by constant 0
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[12] driven by constant 0
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[11] driven by constant 0
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[10] driven by constant 0
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[9] driven by constant 0
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[8] driven by constant 0
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[7] driven by constant 0
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[6] driven by constant 0
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[5] driven by constant 0
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[4] driven by constant 0
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[3] driven by constant 0
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[2] driven by constant 0
+WARNING: [Synth 8-3917] design top_fifo_fpga has port led[1] driven by constant 0
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 2776.742 ; gain = 701.773 ; free physical = 19391 ; free virtual = 49231
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------------------------+--------------------------------------------------+---------------+----------------+
+|Module Name                   | RTL Object                                       | Depth x Width | Implemented As | 
++------------------------------+--------------------------------------------------+---------------+----------------+
+|seven_segment_display_adapter | f_basys3_character_to_segments                   | 64x7          | LUT            | 
+|seven_segment_display_adapter | f_basys3_character_to_segments                   | 64x7          | LUT            | 
+|seven_segment_display_adapter | f_basys3_character_to_segments                   | 64x7          | LUT            | 
+|seven_segment_display_adapter | f_basys3_character_to_segments                   | 64x7          | LUT            | 
+|top_fifo_fpga                 | u_display_adapter/f_basys3_character_to_segments | 64x7          | LUT            | 
+|top_fifo_fpga                 | u_display_adapter/f_basys3_character_to_segments | 64x7          | LUT            | 
+|top_fifo_fpga                 | u_display_adapter/f_basys3_character_to_segments | 64x7          | LUT            | 
+|top_fifo_fpga                 | u_display_adapter/f_basys3_character_to_segments | 64x7          | LUT            | 
++------------------------------+--------------------------------------------------+---------------+----------------+
+
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++--------------+----------------------+-----------+----------------------+-------------+
+|Module Name   | RTL Object           | Inference | Size (Depth x Width) | Primitives  | 
++--------------+----------------------+-----------+----------------------+-------------+
+|top_fifo_fpga | u_fifo/reg_array_reg | Implied   | 4 x 16               | RAM32M x 3  | 
++--------------+----------------------+-----------+----------------------+-------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 2839.742 ; gain = 764.773 ; free physical = 19313 ; free virtual = 49161
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 2884.797 ; gain = 809.828 ; free physical = 19265 ; free virtual = 49113
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++--------------+----------------------+-----------+----------------------+-------------+
+|Module Name   | RTL Object           | Inference | Size (Depth x Width) | Primitives  | 
++--------------+----------------------+-----------+----------------------+-------------+
+|top_fifo_fpga | u_fifo/reg_array_reg | Implied   | 4 x 16               | RAM32M x 3  | 
++--------------+----------------------+-----------+----------------------+-------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 2884.797 ; gain = 809.828 ; free physical = 19265 ; free virtual = 49113
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 3043.609 ; gain = 968.641 ; free physical = 19101 ; free virtual = 48949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 3043.609 ; gain = 968.641 ; free physical = 19101 ; free virtual = 48949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 3043.609 ; gain = 968.641 ; free physical = 19101 ; free virtual = 48949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 3043.609 ; gain = 968.641 ; free physical = 19101 ; free virtual = 48949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 3043.609 ; gain = 968.641 ; free physical = 19101 ; free virtual = 48949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 3043.609 ; gain = 968.641 ; free physical = 19101 ; free virtual = 48949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |   112|
+|3     |LUT1   |     1|
+|4     |LUT2   |    95|
+|5     |LUT3   |    63|
+|6     |LUT4   |   483|
+|7     |LUT5   |     3|
+|8     |LUT6   |   118|
+|9     |RAM32M |     3|
+|10    |FDCE   |   532|
+|11    |FDPE   |    29|
+|12    |FDRE   |    96|
+|13    |IBUF   |    20|
+|14    |OBUF   |    28|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 3043.609 ; gain = 968.641 ; free physical = 19101 ; free virtual = 48949
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 14 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 3043.609 ; gain = 857.867 ; free physical = 19101 ; free virtual = 48949
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 3043.617 ; gain = 968.641 ; free physical = 19099 ; free virtual = 48949
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3043.617 ; gain = 0.000 ; free physical = 19275 ; free virtual = 49126
+INFO: [Netlist 29-17] Analyzing 115 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3099.637 ; gain = 0.000 ; free physical = 19276 ; free virtual = 49127
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 3 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 3 instances
+
+Synth Design complete | Checksum: 57e0cefc
+INFO: [Common 17-83] Releasing license: Synthesis
+44 Infos, 28 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 3099.672 ; gain = 1168.914 ; free physical = 19275 ; free virtual = 49126
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1964.676; main = 1964.676; forked = 303.694
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4439.633; main = 3099.641; forked = 1662.887
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3123.648 ; gain = 0.000 ; free physical = 19274 ; free virtual = 49125
+INFO: [Common 17-1381] The checkpoint '/alumnos/a167838/Escritorio/ParteDigitalMDE/Practica3/practica_fifo/impl_fpga/vivado_prj/fifo_basys3/fifo_basys3.runs/synth_1/top_fifo_fpga.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file top_fifo_fpga_utilization_synth.rpt -pb top_fifo_fpga_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 12 12:42:56 2026...

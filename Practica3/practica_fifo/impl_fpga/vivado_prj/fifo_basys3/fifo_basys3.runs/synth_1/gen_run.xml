@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1794483725">
+  <File Type="VDS-TIMINGSUMMARY" Name="top_fifo_fpga_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="top_fifo_fpga.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="top_fifo_fpga_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="top_fifo_fpga_utilization_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="top_fifo_fpga_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="top_fifo_fpga.tcl"/>
+  <File Type="REPORTS-TCL" Name="top_fifo_fpga_reports.tcl"/>
+  <File Type="RDS-RDS" Name="top_fifo_fpga.vds"/>
+  <File Type="RDS-PROPCONSTRS" Name="top_fifo_fpga_drc_synth.rpt"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../../rtl_fpga/basys3_lib/basys3_ctes_pkg.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="basys3_lib"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl_fpga/basys3_lib/basys3_types_pkg.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="basys3_lib"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl_fpga/basys3_lib/basys3_components_pkg.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="basys3_lib"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl_fpga/basys3_lib/basys3_functions_pkg.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="basys3_lib"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl_fpga/basys3_lib/debouncer.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="basys3_lib"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/fifo.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl_fpga/basys3_lib/seven_segment_display_adapter.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="basys3_lib"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl_fpga/top_fifo_fpga.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="top_fifo_fpga"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../../constraints/constraints.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>
