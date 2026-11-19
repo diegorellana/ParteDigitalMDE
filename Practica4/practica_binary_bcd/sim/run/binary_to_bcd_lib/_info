@@ -1,0 +1,110 @@
+m255
+K4
+z2
+!s11e vcom 2025.2 2025.05, May 31 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/diego/Desktop/UNAV/4to/MDE/ParteDigitalMDE/Practica4/practica_binary_bcd/sim/run
+Pctes_pkg
+Z1 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+Z5 w1794832668
+R0
+8../../rtl/binary_to_bcd_lib/ctes_pkg.vhd
+F../../rtl/binary_to_bcd_lib/ctes_pkg.vhd
+l0
+L7 13
+V3z[a3n0k=cnYeJQgOWFYM2
+!s100 QnLSj^VnVL_?^;PDU]i?H3
+Z6 OL;C;2025.2;82
+33
+Z7 !s110 1794833207
+!i10b 1
+Z8 !s108 1794833207.000000
+!s90 -reportprogress|300|-2008|-work|binary_to_bcd_lib|../../rtl/binary_to_bcd_lib/ctes_pkg.vhd|
+!s107 ../../rtl/binary_to_bcd_lib/ctes_pkg.vhd|
+!i113 0
+Z9 o-2008 -work binary_to_bcd_lib
+Z10 tExplicit 1 CvgOpt 0 defaultOptions 1083072464
+Pfunctions_pkg
+Z11 DPx17 binary_to_bcd_lib 12 subtypes_pkg 0 22 U_kJC31fVEfb_?n<1b:>z0
+Z12 DPx17 binary_to_bcd_lib 8 ctes_pkg 0 22 3z[a3n0k=cnYeJQgOWFYM2
+R1
+R2
+R3
+R4
+!i122 2
+R5
+R0
+Z13 8../../rtl/binary_to_bcd_lib/functions_pkg.vhd
+Z14 F../../rtl/binary_to_bcd_lib/functions_pkg.vhd
+l0
+L10 9
+V]N^bMi66@1@ONj<4Q5[<Y2
+!s100 >b;7P[fgC9WN`3159:Q7e3
+R6
+33
+b1
+R7
+!i10b 1
+R8
+Z15 !s90 -reportprogress|300|-2008|-work|binary_to_bcd_lib|../../rtl/binary_to_bcd_lib/functions_pkg.vhd|
+!s107 ../../rtl/binary_to_bcd_lib/functions_pkg.vhd|
+!i113 0
+R9
+R10
+Bbody
+DPx4 work 13 functions_pkg 0 22 ]N^bMi66@1@ONj<4Q5[<Y2
+R11
+R12
+R1
+R2
+R3
+R4
+!i122 2
+l0
+L20 44
+V_4WZ^PWK<KnKAY?neWDBJ2
+!s100 DOFZXzR?g]lc]]=jUV9zL3
+R6
+33
+R7
+!i10b 1
+R8
+R15
+Z16 !s107 ../../rtl/binary_to_bcd_lib/functions_pkg.vhd|
+!i113 0
+R9
+R10
+Psubtypes_pkg
+R12
+R1
+R2
+R3
+R4
+!i122 1
+R5
+R0
+8../../rtl/binary_to_bcd_lib/subtypes_pkg.vhd
+F../../rtl/binary_to_bcd_lib/subtypes_pkg.vhd
+l0
+L9 3
+VU_kJC31fVEfb_?n<1b:>z0
+!s100 JaldgOc;YV9i0KKG7QVcE3
+R6
+33
+R7
+!i10b 1
+R8
+!s90 -reportprogress|300|-2008|-work|binary_to_bcd_lib|../../rtl/binary_to_bcd_lib/subtypes_pkg.vhd|
+!s107 ../../rtl/binary_to_bcd_lib/subtypes_pkg.vhd|
+!i113 0
+R9
+R10

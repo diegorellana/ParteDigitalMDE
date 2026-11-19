@@ -1,0 +1,133 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11e vcom 2025.2 2025.05, May 31 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/diego/Desktop/UNAV/4to/MDE/ParteDigitalMDE/Practica4/practica_binary_bcd/sim/run
+T_opt
+!i145 1
+!i144 0
+!s110 1794833210
+VRC1EUO0W^4n7Y_72L0NGm2
+04 16 2 work tb_binary_to_bcd tb 1
+=1-e460174f69e7-6afafb39-c4-6258
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM10U2 
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work +acc
+tCvgOpt 0 defaultOptions 1107585188
+n@_opt
+OL;O;2025.2;82
+Ebinary_to_bcd
+Z2 w1794832668
+Z3 DPx17 binary_to_bcd_lib 12 subtypes_pkg 0 22 U_kJC31fVEfb_?n<1b:>z0
+Z4 DPx17 binary_to_bcd_lib 13 functions_pkg 0 22 ]N^bMi66@1@ONj<4Q5[<Y2
+Z5 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
+Z6 DPx17 binary_to_bcd_lib 8 ctes_pkg 0 22 3z[a3n0k=cnYeJQgOWFYM2
+Z7 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z9 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+R1
+Z10 8../../rtl/binary_to_bcd.vhd
+Z11 F../../rtl/binary_to_bcd.vhd
+l0
+L32 1
+VlW=j=>=bDdGlMXnQ3abd03
+!s100 [jZd_AB@UDWjIQYE@D@JV1
+Z12 OL;C;2025.2;82
+33
+Z13 !s110 1794833208
+!i10b 1
+Z14 !s108 1794833207.000000
+Z15 !s90 -reportprogress|300|-2008|-work|work|../../rtl/binary_to_bcd.vhd|
+Z16 !s107 ../../rtl/binary_to_bcd.vhd|
+!i113 0
+Z17 o-2008 -work work
+Z18 tExplicit 1 CvgOpt 0 defaultOptions 1083072464
+Artl
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+Z19 DEx4 work 13 binary_to_bcd 0 22 lW=j=>=bDdGlMXnQ3abd03
+!i122 0
+l86
+L49 150
+V1WA;2N^U6TYKJ]^1_nB1R1
+!s100 zGGb_a1GfW=V7K``[fHe12
+R12
+33
+R13
+!i10b 1
+R14
+R15
+R16
+!i113 0
+R17
+R18
+Etb_binary_to_bcd
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+!i122 1
+R1
+Z20 8../../testbench/tb_binary_to_bcd.vhd
+Z21 F../../testbench/tb_binary_to_bcd.vhd
+l0
+L31 1
+VfN9MJ3UPEd2`h=3U3QkLf1
+!s100 MWB]1amoO?ga4I717C[^@0
+R12
+33
+R13
+!i10b 1
+Z22 !s108 1794833208.000000
+Z23 !s90 -reportprogress|300|-2008|-work|work|../../testbench/tb_binary_to_bcd.vhd|
+Z24 !s107 ../../testbench/tb_binary_to_bcd.vhd|
+!i113 0
+R17
+R18
+Atb
+DPx3 std 3 env 0 22 g[fj8WJKOa<0Y`zWY3UD70
+R19
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+DEx4 work 16 tb_binary_to_bcd 0 22 fN9MJ3UPEd2`h=3U3QkLf1
+!i122 1
+l108
+L37 223
+V4Q0U42STY0QN8W1b@_AU10
+!s100 YlLb?`AAKUV846W9<^:]d3
+R12
+33
+R13
+!i10b 1
+R22
+R23
+R24
+!i113 0
+R17
+R18
