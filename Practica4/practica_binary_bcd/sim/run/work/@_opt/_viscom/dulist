@@ -1,6 +1,0 @@
-1 8 ctes_pkg 4 fast 107 C:/Users/diego/Desktop/UNAV/4to/MDE/ParteDigitalMDE/Practica4/practica_binary_bcd/sim/run/binary_to_bcd_lib 0 80 0 0 36 0
-1 12 subtypes_pkg 4 fast 107 C:/Users/diego/Desktop/UNAV/4to/MDE/ParteDigitalMDE/Practica4/practica_binary_bcd/sim/run/binary_to_bcd_lib 0 80 0 0 6 0
-1 13 functions_pkg 4 fast 107 C:/Users/diego/Desktop/UNAV/4to/MDE/ParteDigitalMDE/Practica4/practica_binary_bcd/sim/run/binary_to_bcd_lib 0 80 0 0 104 0
-1 13 functions_pkg 4 body 107 C:/Users/diego/Desktop/UNAV/4to/MDE/ParteDigitalMDE/Practica4/practica_binary_bcd/sim/run/binary_to_bcd_lib 0 80 0 0 104 0
-1 13 binary_to_bcd 3 rtl 94 C:/Users/diego/Desktop/UNAV/4to/MDE/ParteDigitalMDE/Practica4/practica_binary_bcd/sim/run/work 1 65 2048 0 2060 0
-1 16 tb_binary_to_bcd 2 tb 94 C:/Users/diego/Desktop/UNAV/4to/MDE/ParteDigitalMDE/Practica4/practica_binary_bcd/sim/run/work 1 65 0 0 562 0
